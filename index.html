@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Felices 2 Años</title>
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('assest/background.jpeg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .header h1 {
+      font-family: 'Parisienne', cursive;
+      font-size: 45px;
+      margin: 0;
+      color: #e06b6b;
+    }
+
+    .header p {
+      font-size: 20px;
+      color: #333;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    .image-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .image-row img {
+      width: 48%;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .text-block {
+      font-size: 19px;
+      color: #333;
+      margin-bottom: 20px;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    .single-image {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .single-image img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .footer {
+      font-family: 'Parisienne', cursive;
+      font-size: 35px;
+      text-align: center;
+      color: #e06b6b;
+    }
+
+    /* Responsive para pantallas menores a 425px */
+    @media (max-width: 425px) {
+      .image-row {
+        flex-direction: column;
+      }
+
+      .image-row img {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .single-image img {
+        max-width: 100%;
+      }
+
+      .header p {
+      font-size: 18px;
+      color: #333;
+      font-family: 'Nunito', sans-serif;
+    }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Felices 2 Años</h1>
+      <p>Un recorrido por los momentos más especiales de nuestro amor.</p>
+    </div>
+
+    <!-- Primera fila de imágenes -->
+    <div class="image-row">
+      <img src="assest/image1.jpeg" alt="Imagen 1" id="image1">
+      <img src="assest/image2.jpeg" alt="Imagen 2" id="image2">
+    </div>
+    <div class="text-block">Amor, estos dos años contigo han sido un viaje increíble. Me encanta compartir mi vida contigo, desde las cosas más pequeñas hasta los momentos más grandes.
+      Aprecio tanto lo pendiente que estás de mí, lo dulce, paciente y comprensivo que eres, y cómo siempre me impulsas a ser una mejor versión de mí misma. Eres mi refugio y mi impulso para ser mejor.
+      Gracias por todo lo que haces por mí, por nosotros.</div>
+
+    <!-- Segunda fila de imágenes -->
+    <div class="image-row">
+      <img src="assest/image3.jpeg" alt="Imagen 3" id="image3">
+      <img src="assest/image4.jpeg" alt="Imagen 4" id="image4">
+    </div>
+    <div class="text-block">Amo verte sonreír y cómo te pones cuando estás nervioso, es algo que siempre me saca una sonrisa.
+      Me encanta la forma en que te prestas para mis locuras y cuando te miras al espejo y empiezas a posar en frente de él.
+      Gracias por ser así de especial y por regalarme tantos momentos de felicidad.</div>
+
+    <!-- Tercera fila de imágenes -->
+    <div class="image-row">
+      <img src="assest/image6.jpeg" alt="Imagen 5" id="image5">
+      <img src="assest/image7.jpeg" alt="Imagen 6" id="image6">
+    </div>
+    <div class="text-block">Me encanta que juntos podemos hacer cualquier cosa y siempre lo disfruto, tengo recuerdo contigo bailando, 
+      pintando, cocinando, jugando, durmiendo y hasta caminando y haciendo ejericicio, aunque hace rato no hacemos ejercicio juntos 
+      y lo extraño, pero tambien sé aun tenemos mucho tiempo para seguir construyendo mucha más y deleitarme con el placer de tu presencia.</div>
+
+    <!-- Fila final con una sola imagen -->
+    <div class="single-image">
+      <img src="assest/image5.jpeg" alt="Imagen 7" id="image7">
+    </div>
+    <div class="text-block">El viaje que compartimos me dejó aun más enamorada de ti. En definitiva sentí que nos acercamos mucho más y es una experiencia que quiero repetir contigo mil veces.</div>
+    <div class="text-block">Me encanta pensar en todo lo que hemos vivido juntos, los recuerdos que tenemos y en todo lo que aún nos espera.
+      Espero que sigamos creciendo como pareja, enfrentando retos y viviendo momentos inolvidables.</div>
+      
+    <div class="footer">
+      <p><b>¡Gracias por estos 2 años maravillosos a tu lado! ¡Te amo!</b></p>
+    </div>
+  </div>
+
+  <script>
+    const images = document.querySelectorAll('.image-row img, .single-image img');
+    let imageInterval;
+
+    function changeImages() {
+      clearInterval(imageInterval);
+
+      imageInterval = setInterval(() => {
+        images.forEach((img) => {
+          const currentSrc = img.src;
+          if (currentSrc.includes('new')) {
+            img.src = currentSrc.replace('newimage', 'image');
+          } else {
+            img.src = currentSrc.replace('image', 'newimage');
+          }
+        });
+      }, 2500);
+    }
+
+    changeImages();
+
+    window.addEventListener('resize', changeImages);
+  </script>
+</body>
+</html>
